@@ -1,0 +1,77 @@
+"Work (W), Instance (I), Item (Item)",Path to value,MARC destination,Conversion,Notes
+,,00-04,"""     """,All blanks for MARCXML
+W,adminMetadata/AdminMetadata/status/Status/code,05,"(value == """") ? ""n"" : value","Default ""n"""
+W,rdf:type/@rdf:resource,06,"if ((value == ""bf:NotatedMusic"") && (Instance/rdf:type/@rdf:resource == ""bf:Manuscript"")) {
+  ""d""
+} else if (value == ""bf:NotatedMusic"") {
+  ""c""
+} else if ((value == ""bf:Cartography"") && (Instance/rdf:type/@rdf:resource == ""bf:Manuscript"")) {
+  ""f""
+} else if (value == ""bf:Cartography"") {
+  ""e""
+} else if (value == ""bf:MovingImage"") {
+  ""g""
+} else if (value == ""bf:Audio"") {
+  if (Work/content/Content/@rdf:about == ""http://id.loc.gov/vocabulary/contentTypes/prm"" {
+    ""j""
+  } else {
+    ""i""
+  }
+} else if (value == ""bf:StillImage"") {
+  ""k""
+} else if (value == ""bf:Electronic"") {
+  ""m""
+} else if (value == ""bf:MixedMaterial"" {
+  ""p""
+} else if (value == ""bf:Object"") {
+  ""r""
+} else if ((value == ""bf:Text"") && (Instance/rdf:type/@rdf:resource == ""bf:Manuscript"")) {
+  ""t""
+} else {
+  ""a""
+}","Default ""a"""
+I,issuance/Issuance/@rdf:about,07,"if (Instance/rdf:type/@rdf:resource == ""bf:Collection"") {
+  ""c""
+} else if (value == ""http://id.lc.gov/vocabulary/issuance/intg"") {
+  ""i""
+} else if (value == ""http://id.lc.gov/vocabulary/issuance/serl"") {
+  ""s""
+} else {
+  ""m""
+}","Default ""m"". Comes from either the issuance or the rdf:type of the Instance."
+I,rdf:type/@rdf:resource,08,"(value == ""bf:Archival"") ? ""a"" : "" ""","Default "" """
+,,09-16,"""a22     """,Defaults for MARCXML
+W,adminMetadata/AdminMetadata/bflc:encodingLevel/bflc:EncodingLevel,17,"if (@rdf:about == ""http://id.loc.gov/vocabulary/menclvl/f"" || bf:code == ""f"") {
+  "" ""
+} else if (@rdf:about == ""http://id.loc.gov/vocabulary/menclvl/1"") {
+  ""1""
+} else if (@rdf:about == ""http://id.loc.gov/vocabulary/menclvl/3"") {
+  ""3""
+} else if (@rdf:about == ""http://id.loc.gov/vocabulary/menclvl/4"") {
+  ""4""
+} else if (@rdf:about == ""http://id.loc.gov/vocabulary/menclvl/5"") {
+  ""5""
+} else if (@rdf:about == ""http://id.loc.gov/vocabulary/menclvl/7"") {
+  ""7""
+} else if (@rdf:about == ""http://id.loc.gov/vocabulary/menclvl/8"") {
+  ""8""
+} else if (bf:code != """") {
+  bf:code
+} else {
+  ""u""
+}","Default ""u"". Conversion may come from either the object of bflc:encodingLevel (@rdf:about property of the bflc:EncodingLevel object) or the object's bf:code predicate."
+W,adminMetadata/AdminMetadata/descriptionConventions/DescriptionConventions,18,"if (@rdf:about == ""http://id.loc.gov/vocabulary/descriptionConventions/aacr"" || bf:code == ""aacr"") {
+  ""a""
+} else if (@rdf:about == ""http://id.loc.gov/vocabulary/descriptionConventions/isbd"" || bf:code == ""isbd"") {
+  ""i""
+} else {
+  ""u""
+}","Default ""u"". Conversion may come from either the object of bf:descriptionConventions (@rdf:about property of the bf:DescriptionConventions object) or the object's bf:code predicate."
+,,19,""" """,nac
+,,20-23,"""4500""",Default for MARCXML
+,,001,"Implementation:
+Record ID can be given as a parameter to the stylesheet (pRecordId)
+If it does not come from the parameter, it will try to get it from Work/adminMetadata/AdminMetadata/identifiedBy/Local/rdf:value
+If that is not available, it will be generated using generate-id()",All MARC records must have an 001
+W,adminMetadata/AdminMetadata/source/Source/code,003,,
+W,adminMetadata/AdminMetadata/changeDate,005,"value.substring(0,4) + value.substring(5,2) + value.substring(8,2) + value.substring(11,2) + value.substring(14,2) + value.substring(18,2) + "".0""","Convert to ""yyyymmddhhmmss.f"""

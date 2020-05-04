@@ -1,0 +1,185 @@
+"Work (W), Instance (I), Item (Item)",Path to value,MARC destination,MARC Repeatability,Conversion,Notes
+W,contribution/bflc:PrimaryContribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName),100,NR,,Each contribution/bflc:Contribution/agent/madsrdf:PersonalName will create a MARC 100.
+W,contribution/bflc:PrimaryContribution/agent/madsrdf:PersonalName,100 I1,NR,"""1""",
+W,contribution/bflc:PrimaryContribution/agent/madsrdf:FamilyName,100 I1 ,NR,"""3""",
+W,contribution/bflc:PrimaryContribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName),100 I2,NR,""" """,
+W,contribution/bflc:PrimaryContribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName)/madsrdf:elementList/madsrdf:FullNameElement/madsrdf:elementValue,100 $a,NR,,
+,,100 $b,NR,,
+W,contribution/bflc:PrimaryContribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName)/madsrdf:elementList/madsrdf:TermsOfAddressNameElement/madsrdf:elementValue,100 $c,RR,,
+W,contribution/bflc:PrimaryContribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName)/madsrdf:elementList/madsrdf:DateNameElement/madsrdf:elementValue,100 $d,NR,,
+W,contribution/bflc:PrimaryContribution/role/Role/rdfs:label && (contribution/bflc:PrimaryContribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName)),100 $e,R,,
+,,100 $j,R,,nac - information cannot be determined from madsrdf.
+W,contribution/bflc:PrimaryContribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName)/madsrdf:fullerName/madsrdf:PersonalName/rdfs:label,100 $q,NR,,
+,,100 $u,NR,,nac - information cannot be determined from madsrdf.
+W,contribution/bflc:PrimaryContribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName),100 $0,RR,value == URI,
+W,contribution/bflc:PrimaryContribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName)/madsrdf:hasExactExternalAuthority,100 $1,R,,
+W,contribution/bflc:PrimaryContribution/role/Role/code && (contribution/bflc:PrimaryContribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName)),100 $4,R,,$4 generated from code
+W,contribution/bflc:PrimaryContribution/role/Role && (contribution/bflc:PrimaryContribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName)),100 $4,R,,$4 generated from URI
+W,,100 $6,NR,,See specs for linkage.
+W,contribution/bflc:PrimaryContribution/agent/madsrdf:CorporateName,110,NR,,Each contribution/bflc:Contribution/agent/madsrdf:CorporateName will create a MARC 110.
+W,contribution/bflc:PrimaryContribution/agent/madsrdf:CorporateName,110 I1,NR,"""2""",
+W,contribution/bflc:PrimaryContribution/agent/madsrdf:CorporateName,110 I2,NR,""" """,
+W,contribution/bflc:PrimaryContribution/agent/madsrdf:CorporateName/madsrdf:elementList/madsrdf:NameElement[1]/madsrdf:elementValue,110 $a,NR,,The first element in the elementList collection becomes $a
+W,contribution/bflc:PrimaryContribution/agent/madsrdf:CorporateName/madsrdf:elementList/madsrdf:NameElement[pos()>1]/madsrdf:elementValue,110 $b,R,,Each additional element in the elementList becomes a $b
+,,110 $c,R,,nac
+,contribution/bflc:PrimaryContribution/agent/madsrdf:CorporateName/madsrdf:elementList/madsrdf:DateNameElement/madsrdf:elementValue,110 $d,R,,
+W,contribution/bflc:PrimaryContribution/role/Role/rdfs:label && (contribution/bflc:PrimaryContribution/agent/madsrdf:CorporateName),110 $e,R,,
+W,contribution/bflc:PrimaryContribution/agent/madsrdf:CorporateName,110 $0,RR,value == URI,
+W,contribution/bflc:PrimaryContribution/agent/madsrdf:CorporateName/madsrdf:hasExactExternalAuthority,110 $1,R,,
+W,contribution/bflc:PrimaryContribution/role/Role/code && (contribution/bflc:PrimaryContribution/agent/madsrdf:CorporateName),110 $4,R,,$4 generated from code
+W,contribution/bflc:PrimaryContribution/role/Role && (contribution/bflc:PrimaryContribution/agent/madsrdf:CorporateName),110 $4,R,,$4 generated from URI
+W,,110 $6,NR,,See specs for linkage.
+W,contribution/bflc:PrimaryContribution/agent/madsrdf:ConferenceName,111,NR,,Each contribution/bflc:Contribution/agent/madsrdf:ConferenceName will create a MARC 111.
+W,contribution/bflc:PrimaryContribution/agent/madsrdf:ConferenceName,111 I1,NR,""" """,nac
+W,contribution/bflc:PrimaryContribution/agent/madsrdf:ConferenceName,111 I2,NR,""" """,
+W,contribution/bflc:PrimaryContribution/agent/madsrdf:ConferenceName/madsrdf:elementList/madsrdf:NameElement/madsrdf:elementValue,111 $a,NR,,
+W,contribution/bflc:PrimaryContribution/agent/madsrdf:ConferenceName/madsrdf:elementList/madsrdf:GeographicElement/madsrdf:elementValue,111 $c,R,,
+W,contribution/bflc:PrimaryContribution/agent/madsrdf:ConferenceName/madsrdf:elementList/madsrdf:DateNameElement/madsrdf:elementValue,111 $d,NR,,
+,,111 $e,R,,nac
+,,111 $g,NR,,nac
+W,contribution/bflc:PrimaryContribution/role/Role/rdfs:label && (contribution/bflc:PrimaryContribution/agent/madsrdf:ConferenceName),111 $j,R,,
+,,111 $u,NR,,nac
+W,contribution/bflc:PrimaryContribution/agent/madsrdf:ConferenceName,111 $0,RR,value == URI,
+W,contribution/bflc:PrimaryContribution/agent/madsrdf:ConferenceName/madsrdf:hasExactExternalAuthority,111 $1,R,,
+W,contribution/bflc:PrimaryContribution/role/Role/code && (contribution/bflc:PrimaryContribution/agent/madsrdf:ConferenceName),111 $4,R,,$4 generated from code
+W,contribution/bflc:PrimaryContribution/role/Role && (contribution/bflc:PrimaryContribution/agent/madsrdf:ConferenceName),111 $4,R,,$4 generated from URI
+W,,111 $6,NR,,See specs for linkage.
+W,subject/(madsrdf:PersonalName || madsrdf:FamilyName),600,R,,Each subject/madsrdf:PersonalName will create a MARC 600.
+W,subject/madsrdf:PersonalName,600 I1,NR,"""1""",
+W,subject/madsrdf:FamilyName,600 I1,NR,"""3""",
+W,subject/(madsrdf:PersonalName || madsrdf:FamilyName),600 I2,NR,"""0""",
+W,subject/(madsrdf:PersonalName || madsrdf:FamilyName)/madsrdf:elementList/madsrdf:FullNameElement/madsrdf:elementValue,600 $a,NR,,
+W,,600 $b,NR,,
+W,subject/(madsrdf:PersonalName || madsrdf:FamilyName)/madsrdf:elementList/madsrdf:TermsOfAddressNameElement/madsrdf:elementValue,600 $c,RR,,
+W,subject/(madsrdf:PersonalName || madsrdf:FamilyName)/madsrdf:elementList/madsrdf:DateNameElement/madsrdf:elementValue,600 $d,NR,,
+W,subject/Agent/role/Role/rdfs:label && (contribution/bflc:Contribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName)),600 $e,R,,
+,,600 $g,R,,nac
+W,,600 $j,R,,nac - information cannot be determined from madsrdf.
+W,subject/(madsrdf:PersonalName || madsrdf:FamilyName)/madsrdf:fullerName/(madsrdf:PersonalName || madsrdf:FamilyName)/rdfs:label,600 $q,NR,,
+W,,600 $u,NR,,nac - information cannot be determined from madsrdf.
+W,subject/(madsrdf:PersonalName || madsrdf:FamilyName),600 $0,RR,value == URI,
+W,subject/(madsrdf:PersonalName || madsrdf:FamilyName)/madsrdf:hasExactExternalAuthority,600 $1,R,,
+W,subject/Agent/role/Role/code && (contribution/bflc:Contribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName)),600 $4,R,,$4 generated from code
+W,subject/Agent/role/Role && (contribution/bflc:Contribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName)),600 $4,NR,,$4 generated from URI
+W,,600 $6,,,See specs for linkage.
+W,subject/madsrdf:CorporateName,610,NR,,Each subject/madsrdf:CorporateName will create a MARC 610.
+W,subject/madsrdf:CorporateName,610 I1,NR,"""2""",
+W,subject/madsrdf:CorporateName,610 I2,NR,"""0""",
+W,subject/madsrdf:CorporateName/madsrdf:elementList/madsrdf:NameElement[1]/madsrdf:elementValue,610 $a,NR,,The first element in the elementList collection becomes $a
+,subject/madsrdf:CorporateName/madsrdf:elementList/madsrdf:NameElement[pos()>1]/madsrdf:elementValue,610 $b,R,,Each additional element in the elementList becomes a $b
+,,610 $c,R,,"nac -- it may be possible to derive this from a madsrdf:associatedLocale, but we were unable to find examples."
+,subject/madsrdf:CorporateName/madsrdf:elementList/madsrdf:DateNameElement/madsrdf:elementValue,610 $d,R,,"For title portion, pull from bf:legalDate"
+W,subject/Agent/role/Role/rdfs:label && (subject/madsrdf:CorporateName),610 $e,R,,
+,,610 $g,R,,nac
+,,610 $n,R,,"Coded as part of title, not name"
+,,610 $u,NR,,nac
+W,subject/madsrdf:CorporateName,610 $0,RR,value == URI,
+W,subject/madsrdf:CorporateName/madsrdf:hasExactExternalAuthority,610 $1,R,,
+W,subject/Agent/role/Role/code && (subject/madsrdf:CorporateName),610 $4,R,,$4 generated from code
+W,subject/Agent/role/Role && (subject/madsrdf:CorporateName),610 $4,R,,$4 generated from URI
+W,,610 $6,NR,,See specs for linkage.
+W,subject/madsrdf:ConferenceName,611,NR,,Each subject/madsrdf:ConferenceName will create a MARC 611.
+W,subject/madsrdf:ConferenceName,611 I1,NR,"""2""",
+W,subject/madsrdf:ConferenceName,611 I2,NR,"""0""",
+W,subject/madsrdf:ConferenceName/madsrdf:elementList/madsrdf:NameElement/madsrdf:elementValue,611 $a,NR,,
+W,subject/madsrdf:ConferenceName/madsrdf:elementList/madsrdf:GeographicElement/madsrdf:elementValue,611 $c,R,,
+W,subject/madsrdf:ConferenceName/madsrdf:elementList/madsrdf:DateNameElement/madsrdf:elementValue,611 $d,NR,,nac $d for title portion (it's buried in the label)
+,,611 $e,R,,nac
+,,611 $g,NR,,nac
+W,subject/Agent/role/Role/rdfs:label && (subject/madsrdf:ConferenceName),611 $j,R,,
+,,611 $u,NR,,nac
+W,subject/madsrdf:ConferenceName,611 $0,RR,value == URI,
+W,subject/madsrdf:ConferenceName/madsrdf:hasExactExternalAuthority,611 $1,R,,
+W,contribution/bflc:Contribution/role/Role/code && (subject/madsrdf:ConferenceName),611 $4,R,,$4 generated from code
+W,contribution/bflc:Contribution/role/Role && (subject/madsrdf:ConferenceName),611 $4,R,,$4 generated from URI
+W,,611 $6,NR,,See specs for linkage.
+W,contribution/Contribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName),700,NR,,Each contribution/Contribution/agent/madsrdf:PersonalName will create a MARC 700.
+W,contribution/Contribution/agent/madsrdf:PersonalName,700 I1,NR,"""1""",
+W,contribution/Contribution/agent/madsrdf:FamilyName,700 I1,NR,"""3""",
+W,contribution/Contribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName),700 I2,NR,""" """,
+W,contribution/Contribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName)/madsrdf:elementList/madsrdf:FullNameElement/madsrdf:elementValue,700 $a,NR,,
+,,700 $b,NR,,
+W,contribution/Contribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName)/madsrdf:elementList/madsrdf:TermsOfAddressNameElement/madsrdf:elementValue,700 $c,RR,,
+W,contribution/Contribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName)/madsrdf:elementList/madsrdf:DateNameElement/madsrdf:elementValue,700 $d,NR,,
+W,contribution/Contribution/role/Role/rdfs:label && (contribution/Contribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName)),700 $e,R,,
+,,700 $j,R,,nac - information cannot be determined from madsrdf.
+W,contribution/Contribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName)/madsrdf:fullerName/(madsrdf:PersonalName || madsrdf:FamilyName)/rdfs:label,700 $q,NR,,
+,,700 $u,NR,,nac - information cannot be determined from madsrdf.
+W,contribution/Contribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName),700 $0,RR,value == URI,
+W,contribution/Contribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName)/madsrdf:hasExactExternalAuthority,700 $1,R,,
+W,contribution/Contribution/role/Role/code && (contribution/Contribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName)),700 $4,R,,$4 generated from code
+W,contribution/Contribution/role/Role && (contribution/Contribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName)),700 $4,R,,$4 generated from URI
+W,,700 $6,NR,,See specs for linkage.
+W,contribution/Contribution/agent/madsrdf:CorporateName,710,NR,,Each contribution/Contribution/agent/madsrdf:CorporateName will create a MARC 710.
+W,contribution/Contribution/agent/madsrdf:CorporateName,710 I1,NR,"""2""",
+W,contribution/Contribution/agent/madsrdf:CorporateName,710 I2,NR,""" """,
+W,contribution/Contribution/agent/madsrdf:CorporateName/madsrdf:elementList/madsrdf:NameElement[1]/madsrdf:elementValue,710 $a,NR,,The first element in the elementList collection becomes $a
+W,contribution/Contribution/agent/madsrdf:CorporateName/madsrdf:elementList/madsrdf:NameElement[pos()>1]]/madsrdf:elementValue,710 $b,R,,Each additional element in the elementList becomes a $b
+,,710 $c,R,,"nac -- it may be possible to derive this from a madsrdf:associatedLocale, but we were unable to find examples."
+W,contribution/Contribution/agent/madsrdf:CorporateName/madsrdf:elementList/madsrdf:DateNameElement/madsrdf:elementValue,710 $d,R,,
+W,contribution/Contribution/role/Role/rdfs:label && (contribution/Contribution/agent/madsrdf:CorporateName),710 $e,R,,
+W,contribution/Contribution/agent/madsrdf:CorporateName,710 $0,RR,value == URI,
+W,contribution/Contribution/agent/madsrdf:CorporateName/madsrdf:hasExactExternalAuthority,710 $1,R,,
+W,contribution/Contribution/role/Role/code && (contribution/Contribution/agent/madsrdf:CorporateName),710 $4,R,,$4 generated from code
+W,contribution/Contribution/role/Role && (contribution/Contribution/agent/madsrdf:CorporateName),710 $4,R,,$4 generated from URI
+W,,710 $6,NR,,See specs for linkage.
+W,contribution/Contribution/agent/madsrdf:ConferenceName,711,NR,,Each contribution/Contribution/agent/madsrdf:ConferenceName will create a MARC 711.
+W,contribution/Contribution/agent/madsrdf:ConferenceName,711 I1,NR,"""2""",
+W,contribution/Contribution/agent/madsrdf:ConferenceName,711 I2,NR,""" """,
+W,contribution/Contribution/agent/madsrdf:ConferenceName/madsrdf:elementList/madsrdf:NameElement/madsrdf:elementValue,711 $a,NR,,
+W,contribution/Contribution/agent/madsrdf:ConferenceName/madsrdf:elementList/madsrdf:GeographicElement/madsrdf:elementValue,711 $c,R,,
+W,contribution/Contribution/agent/madsrdf:ConferenceName/madsrdf:elementList/madsrdf:DateNameElement/madsrdf:elementValue,711 $d,NR,,
+,,711 $e,R,,nac
+,,711 $g,NR,,nac
+W,contribution/Contribution/role/Role/rdfs:label && (contribution/Contribution/agent/madsrdf:ConferenceName),711 $j,R,,
+,,711 $u,NR,,nac
+W,contribution/Contribution/agent/madsrdf:ConferenceName,711 $0,RR,value == URI,
+W,contribution/Contribution/agent/madsrdf:ConferenceName/madsrdf:hasExactExternalAuthority,711 $1,R,,
+W,contribution/Contribution/role/Role/code && (contribution/Contribution/agent/madsrdf:ConferenceName),711 $4,R,,$4 generated from code
+W,contribution/Contribution/role/Role && (contribution/Contribution/agent/madsrdf:ConferenceName),711 $4,R,,$4 generated from URI
+W,,711 $6,NR,,See specs for linkage.
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName),800,NR,,Each hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/madsrdf:PersonalName will create a MARC 800.
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName),800 I1,NR,"""1""",
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/madsrdf:FamilyName,800 I1,NR,"""3""",
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName),800 I2,NR,""" """,
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName)/madsrdf:elementList/madsrdf:FullNameElement/madsrdf:elementValue,800 $a,NR,,
+I,,800 $b,NR,,
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName)/madsrdf:elementList/madsrdf:TermsOfAddressNameElement/madsrdf:elementValue,800 $c,RR,,
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName)/madsrdf:elementList/madsrdf:DateNameElement/madsrdf:elementValue,800 $d,NR,,
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/role/Role/rdfs:label && (contribution/bflc:Contribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName)),800 $e,R,,
+I,,800 $j,R,,nac - information cannot be determined from madsrdf.
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName)/madsrdf:fullerName/(madsrdf:PersonalName || madsrdf:FamilyName)/rdfs:label,800 $q,NR,,
+I,,800 $u,NR,,nac - information cannot be determined from madsrdf.
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName),800 $0,RR,value == URI,
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName)/madsrdf:hasExactExternalAuthority,800 $1,R,,
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/role/Role/code && (contribution/bflc:Contribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName)),800 $4,R,,$4 generated from code
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/role/Role && (contribution/bflc:Contribution/agent/(madsrdf:PersonalName || madsrdf:FamilyName)),800 $4,R,,$4 generated from URI
+I,,800 $6,NR,,See specs for linkage.
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/madsrdf:CorporateName,810,NR,,Each hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/madsrdf:CorporateName will create a MARC 810.
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/madsrdf:CorporateName,810 I1,NR,"""2""",
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/madsrdf:CorporateName,810 I2,NR,""" """,
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/madsrdf:CorporateName/madsrdf:elementList/madsrdf:NameElement[1]/madsrdf:elementValue,810 $a,NR,,The first element in the elementList collection becomes $a
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/madsrdf:CorporateName/madsrdf:elementList/madsrdf:NameElement[pos()>1]/madsrdf:elementValue,810 $b,R,,Each additional element in the elementList becomes a $b
+I,,810 $c,R,,"nac -- it may be possible to derive this from a madsrdf:associatedLocale, but we were unable to find examples."
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/madsrdf:CorporateName/madsrdf:elementList/madsrdf:DateNameElement/madsrdf:elementValue,810 $d,R,,
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/role/Role/rdfs:label && (contribution/bflc:Contribution/agent/madsrdf:CorporateName),810 $e,R,,
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/madsrdf:CorporateName,810 $0,RR,value == URI,
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/madsrdf:CorporateName/madsrdf:hasExactExternalAuthority,810 $1,R,,
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/role/Role/code && (contribution/bflc:Contribution/agent/madsrdf:CorporateName),810 $4,R,,$4 generated from code
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/role/Role && (contribution/bflc:Contribution/agent/madsrdf:CorporateName),810 $4,R,,$4 generated from URI
+I,,810 $6,NR,,See specs for linkage.
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/madsrdf:ConferenceName,811,NR,,Each hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/madsrdf:ConferenceName will create a MARC 811.
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/madsrdf:ConferenceName,811 I1,NR,"""2""",
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/madsrdf:ConferenceName,811 I2,NR,""" """,
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/madsrdf:ConferenceName/madsrdf:elementList/madsrdf:NameElement/madsrdf:elementValue,811 $a,NR,,
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/madsrdf:ConferenceName/madsrdf:elementList/madsrdf:GeographicElement/madsrdf:elementValue,811 $c,R,,
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/madsrdf:ConferenceName/madsrdf:elementList/madsrdf:DateNameElement/madsrdf:elementValue,811 $d,NR,,
+I,,811 $e,R,,nac
+I,,811 $g,NR,,nac
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/role/Role/rdfs:label && (contribution/bflc:Contribution/agent/madsrdf:ConferenceName),811 $j,R,,
+I,,811 $u,NR,,nac
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/madsrdf:ConferenceName/madsrdf:hasExactExternalAuthority,811 $0,RR,value == URI,
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/agent/madsrdf:ConferenceName/madsrdf:hasExactExternalAuthority,811 $1,R,,
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/role/Role/code && (contribution/bflc:Contribution/agent/madsrdf:ConferenceName),811 $4,R,,$4 generated from code
+I,hasSeries/Instance/instanceOf/Work/contribution/bflc:Contribution/role/Role && (contribution/bflc:Contribution/agent/madsrdf:ConferenceName),811 $4,R,,$4 generated from URI
+I,,811 $6,NR,,See specs for linkage.
